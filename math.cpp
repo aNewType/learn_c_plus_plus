@@ -1,8 +1,9 @@
 
-#define INTEGER int
+#if 1
 
-INTEGER Mutiply(int a, int b)
+int Mutiply(int a, int b)
 {
-	INTEGER result = a * b;
+	int result = a * b;
 	return result;
 }
+#endif
