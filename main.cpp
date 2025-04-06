@@ -1,10 +1,15 @@
 #include <iostream>
+#include "log.h"
 
-void Log(const char* message);
+static int Multiply(int a, int b)
+{
+	Log("Multiply");
+	return a * b;
+}
 
 int main()
 {
-	Log("Hello World!");
+	std::cout << Multiply(5, 8) << std::endl;
 	std::cin.get();
 	return 0;
 }

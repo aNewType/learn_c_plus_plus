@@ -1,9 +1,10 @@
-
-#if 1
-
-int Mutiply(int a, int b)
+const char* Log1(const char* message)
 {
-	int result = a * b;
-	return result;
+	return message;
 }
-#endif
+
+static int Mutiply(int a, int b)
+{
+	Log1("Multiply");
+	return a * b;
+}
