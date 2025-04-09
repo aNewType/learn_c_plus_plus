@@ -1,5 +1,5 @@
 #include <iostream>
-#include "log.h"
+#include "Log.h"
 
 static int Multiply(int a, int b)
 {
@@ -14,6 +14,7 @@ void MultiplyAndLog(int a, int b)
 
 int main()
 {
+	InitLog(); 
 	unsigned int variable = 8;
 	std::cout << variable << std::endl;
 	variable = 20;
