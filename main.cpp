@@ -14,7 +14,26 @@ void MultiplyAndLog(int a, int b)
 
 int main()
 {
-	InitLog(); 
+	//int a = 8;
+	//a++;
+	//const char* string = "Hello";
+
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	const char c = string[i];
+	//	std::cout << c << std::endl;
+	//}
+
+	int x = 6; 
+	bool comparisonResult = x == 5;
+	if (comparisonResult)
+	{
+		Log("Hello World!");
+	}
+
+	std::cin.get();
+
+	/*InitLog();
 	unsigned int variable = 8;
 	std::cout << variable << std::endl;
 	variable = 20;
@@ -34,6 +53,7 @@ int main()
 	MultiplyAndLog(3, 2);
 	MultiplyAndLog(8, 5);
 	MultiplyAndLog(90, 45);
-	std::cin.get();
+	std::cin.get();*/
+
 	return 0;
 }
