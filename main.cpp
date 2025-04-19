@@ -14,14 +14,16 @@ void MultiplyAndLog(int a, int b)
 
 int main()
 {
-	const char* ptr = "Hello";
-	
-	if (ptr)
-		Log(ptr);
-	else if (ptr == "Hello")
-		Log("ptr is Hello!");
-	else
-		Log("ptr is nullptr!");
+	for (int i = 0; i < 5; i++)
+	{
+		Log("Hello World!");
+	}
+
+	Log("Hello World!");
+	Log("Hello World!");
+	Log("Hello World!");
+	Log("Hello World!");
+	Log("Hello World!");
 
 	std::cin.get();
 
