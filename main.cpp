@@ -1,31 +1,12 @@
 #include <iostream>
-#include "Log.h"
 
-static int Multiply(int a, int b)
-{
-	return a * b;
-}
-
-void MultiplyAndLog(int a, int b)
-{
-	int result = Multiply(a, b);
-	std::cout << result << std::endl;
-}
+#define LOG(x) std::cout << x << std::endl;
 
 int main()
 {
-	for (int i = 0; i < 5; i++)
-	{
-		Log("Hello World!");
-	}
-
-	Log("Hello World!");
-	Log("Hello World!");
-	Log("Hello World!");
-	Log("Hello World!");
-	Log("Hello World!");
-
+	int var = 8;
+	int* ptr = &var;
+	*ptr = 10;
+	LOG(var);
 	std::cin.get();
-
-	return 0;
 }
