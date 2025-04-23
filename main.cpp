@@ -2,41 +2,25 @@
 
 #define LOG(x) std::cout << x << std::endl;
 
-void Increment(int value)
+class Player
 {
-	value++;
-}
+public:
+	int x, y;
+	int speed;
+	
+	void Move( int x_a, int y_a)
+	{
+		x += x_a * speed;
+		y += y_a * speed;
+	}
+};
 
-void Increment_ptr(int* value)
-{
-	(*value)++;
-}
-
-void Increment_ref(int& value)
-{
-	value++;
-}
 
 int main()
 {
-	int a = 5;
-	// not to do any else to addition a variable as comparison
-	Increment(a);
-	LOG(a);
-
-	// use a pointer to modify variable(a)
-	Increment_ptr(&a);
-	LOG(a);
-
-	// use a reference to modify variable(a) int a function
-	a = 5;
-	Increment_ref(a);
-	LOG(a);
-	
-	// use a reference to modify the variable(a)
-	int& ref = a;
-	a = 2;
-	LOG(a);
+	Player player;
+	player.x = 5;
+	player.Move(1, -1);
 
 	std::cin.get();
 }
