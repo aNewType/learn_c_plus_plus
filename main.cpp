@@ -15,6 +15,16 @@ public:
 	}
 };
 
+struct Vector_2
+{
+	float x, y;
+
+	void add(const Vector_2& other)
+	{
+		x += other.x;
+		y += other.y;
+	}
+};
 
 int main()
 {
