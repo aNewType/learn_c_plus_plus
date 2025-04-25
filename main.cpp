@@ -10,6 +10,9 @@ struct Entity
 	}
 };
 
+int Entity::x;
+int Entity::y;
+
 int main()
 {
 	Entity e;
