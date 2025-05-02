@@ -1,34 +1,17 @@
 #include <iostream>
 
-class Singleton
+enum Example : const int
 {
-public:
-	static Singleton& Get()
-	{
-		static Singleton instance;
-		return instance;
-	}
-
-	void hello()
-	{
-		std::cout << "hello" << std::endl;
-	}
+	A = 5, B, C
 };
 
-void Function()
+int main1()
 {
-	static int i = 0;
-	i++;
-	std::cout << i << std::endl;
-}
-
-int main()
-{
-	Singleton::Get().hello();
-	/*Function();
-	Function();
-	Function();
-	Function();
-	Function();*/
+	Example value = B;
+	if (value == Example::A)
+	{
+		// do something here
+	}
 	std::cin.get();
+	return 0;
 }
