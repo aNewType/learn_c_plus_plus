@@ -32,14 +32,3 @@ public:
 			std::cout << "[INFO]: " << message << std::endl;
 	}
 };
-
-int main()
-{
-	Log log;
-	log.SetLevel(Log::Level_Error);
-	log.Error("Hello");
-	log.Warning("Hello");
-	log.Info("Hello");
-	std::cin.get();
-	return 0;
-}

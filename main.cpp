@@ -1,17 +1,42 @@
 #include <iostream>
 
-enum Example : const int
+class Entity
 {
-	A = 5, B, C
+public:
+	float X, Y;
+
+	Entity()
+	{
+		std::cout << "Created Entity!" << std::endl;
+		X = 0.0f;
+		Y = 0.0f;
+	}
+
+	Entity(float x, float y)
+	{
+		X = x;
+		Y = y;
+	}
+
+	~Entity()
+	{
+		std::cout << "Destroyed Entity!" << std::endl;
+	}
+
+	void print()
+	{
+		std::cout << X << ", " << Y << std::endl;
+	}	
 };
 
-int main1()
+void Function()
 {
-	Example value = B;
-	if (value == Example::A)
-	{
-		// do something here
-	}
+	Entity e	;
+	e.print();
+}
+
+int main()
+{
+	Function();
 	std::cin.get();
-	return 0;
 }
