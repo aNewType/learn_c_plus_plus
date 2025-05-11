@@ -1,35 +1,44 @@
 #include <iostream>
-#include <string>
+#include <array>
 
 class Entity
 {
 public:
-	int X, Y;
+	static const int exampleSize = 5;
+	int example[exampleSize];
+	//int* example = new int[5];
 
-	void Print() {}
+	std::array<int, 5> another;
 
-public:
 	Entity()
 	{
-		X = 0;
-		Print();
-	}
-};
+		for (int i = 0; i < exampleSize; i++)
+			example[i] = 2;
 
-class Player : public Entity
-{
-public:
-	Player()
-	{
-		X = 2;
-		Print();
+		for (int i = 0; i < another.size(); i++)
+			another[i] = 2;
 	}
 };
 
 int main()
 {
+	// int example[5];
+	// int* ptr = example;
+
+	//for (int i = 0; i < 5; i++)
+	//	example[i] = 2;
+
+	//example[2] = 5;
+	//*(int*)((char*)ptr + 8) = 6;	// *(ptr + 2) = 6;
+
 	Entity e;
-	e.Print();
-	e.X = 2;
-	std::cin.get();
+
+	/*int* another = new int[5];
+	
+	for (int i = 0; i < 5; i++)
+		another[i] = 2;
+	
+	delete[] another;*/
+
+ 	std::cin.get();
 } 
