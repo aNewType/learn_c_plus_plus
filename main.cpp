@@ -2,28 +2,38 @@
 #include <string>
 #include <stdlib.h>
 
+class Entity
+{
+private:
+	int* m_X, *m_Y;
+	mutable int var;	// "mutable" makes sures that var can be changed in const function
+
+public:
+	const int* const GetX() const
+	{
+		var = 2;
+		return m_X;
+	}
+
+	const int* const GetY() const
+	{
+		return m_Y;
+	}
+};
+
+void PrintEntity(const Entity& e)
+{
+	std::cout << e.GetX() << std::endl;
+}
+
 int main()
 {
-	using namespace std::string_literals;
+	Entity e;
 
-	std::u32string name0 = U"cherno"s + U"hello";
 
-	const char* example = R"(Line1
-Line2
-Line3
-Line4)";
+	const int MAX_AGE = 80;
 
-	const char* ex = "Line1\n"
-		"Line2\n"
-		"Line3\n";
+	const int* const a = new int;
 
-	const char* name = "cherno";	// 1 bytes, also can say: const char* name = u8"cherno";
-	std::cout << strlen(name) << std::endl;
-	std::cout << name << std::endl;
-
-	const wchar_t* name2 = L"cherno";	// 2 bytes or 4 bytes
-	const char16_t* name3 = u"cherno";	// 2 bytes
-	const char32_t* name4 = U"cherno";	// 4 bytes
- 	
 	std::cin.get();
 } 
