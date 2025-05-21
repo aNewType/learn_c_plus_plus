@@ -1,39 +1,42 @@
 #include <iostream>
 #include <string>
-#include <stdlib.h>
 
 class Entity
 {
 private:
-	int* m_X, *m_Y;
-	mutable int var;	// "mutable" makes sures that var can be changed in const function
+	std::string m_Name;
+	mutable int m_DebugCount = 0;
 
 public:
-	const int* const GetX() const
+	Entity()
 	{
-		var = 2;
-		return m_X;
+		m_Name = "Unkonw";
 	}
 
-	const int* const GetY() const
+	Entity(const std::string& name)
 	{
-		return m_Y;
+		m_Name = name;
+	}
+
+	const std::string& GetName() const 
+	{ 
+		m_DebugCount++;
+		return m_Name;  
 	}
 };
 
-void PrintEntity(const Entity& e)
-{
-	std::cout << e.GetX() << std::endl;
-}
-
 int main()
 {
-	Entity e;
+	const Entity e;
+	e.GetName();
 
-
-	const int MAX_AGE = 80;
-
-	const int* const a = new int;
+	int x = 8;
+	auto f = [=]() mutable
+	{
+		x++;
+		std::cout << x << std::endl;
+	};
+	f();
 
 	std::cin.get();
 } 
